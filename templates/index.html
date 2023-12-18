@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    
+    <link rel="stylesheet" href="../static/css/style.css" type="text/css">
+</head>
+
+<body >
+    
+    <div id="pageSelection" class="container">
+        <h1>Disease Prediction</h1>
+        <div class="selection">
+            <button id="fruitButton">Fruit</button>
+            <button id="vegetableButton">Vegetable</button>
+        </div>
+    </div>
+
+    <div id="fileSelection" class="container" style="display:none;">
+        <h1>Disease Prediction</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <button id="chooseFileButton">Choose File</button>
+            <input type="file" id="fileInput" name="file" accept="image/*" style="display:none;">
+            <input type="text" id="selectedFileName" readonly style="margin-top: 10px;">
+            <input type="hidden" name="model" id="modelType" value="">
+            <button type="submit">Predict</button>
+            
+
+        </form>
+    </div>
+    
+    <div id="result" class="container" style="display:none;">
+        <h1>Prediction Result</h1>
+        <h2 id="predictedCategory"></h2>
+        <div class="recommendations-box">
+            <h3>Fertilizer Recommendations</h3>
+            <ul id="recommendations"></ul>
+        </div>
+        <img id="predictedImage" alt="Predicted Image">
+        <a href="#" id="goBack">Go Back</a>
+    </div>
+    
+
+    <script src="../static/js/valid.js"></script>
+    
+</body>
+
+</html>
